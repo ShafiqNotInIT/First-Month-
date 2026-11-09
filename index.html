@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#311420">
+<title>One Month of Us ♡</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 50% 10%,#74334c,#311420 64%);color:#fff0e5;font:20px/1.6 Unifraktur,"Old English Text MT",Georgia,serif;text-align:center}main{width:min(100% - 36px,680px);margin:auto;padding:clamp(55px,11vh,115px) 0 48px}h1{font-weight:normal;font-size:clamp(44px,9vw,74px);line-height:1.05;margin:.35em 0}.eyebrow{font-size:15px;letter-spacing:.1em;color:#f4b9c6}button{font:inherit;cursor:pointer;color:#451d2d;background:#ffe4d8;border:0;border-radius:100px;padding:10px 22px}button:focus-visible{outline:3px solid #fff;outline-offset:5px}.envelope{width:min(76vw,330px);height:185px;position:relative;display:block;margin:44px auto 20px;border-radius:10px;background:#df9eaa;box-shadow:0 24px 55px #18081299;isolation:isolate;padding:0;perspective:600px}.envelope:before{content:"";position:absolute;inset:0;background:#efb4bb;clip-path:polygon(0 0,50% 57%,100% 0,100% 100%,0 100%);border-radius:inherit}.flap{position:absolute;inset:0;background:#ffd8d4;clip-path:polygon(0 0,100% 0,50% 61%);transform-origin:top;transition:transform .55s ease;border-radius:inherit}.seal{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);border-radius:50%;background:#8d304e;color:#fff1e7;width:46px;height:46px;display:grid;place-items:center;box-shadow:0 3px 8px #57233788}.opened .flap{transform:rotateX(178deg)}.opened .seal{opacity:0}.spark{position:fixed;z-index:5;pointer-events:none;color:#ffd0d6;font-size:25px;animation:burst .8s ease-out both}@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}.paper{background:#fff0e2;color:#502534;padding:clamp(22px,6vw,48px);border-radius:5px;box-shadow:0 20px 55px #14071066}.paper h1{font-size:clamp(37px,8vw,60px)}.paper .eyebrow{color:#8b3b54}.letter{text-align:left}.signoff{text-align:center;font-size:clamp(28px,7vw,44px);color:#85324f;margin-bottom:0}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;margin:22px 0}.gallery img{width:100%;height:auto;border:6px solid white;display:block}.slot{min-height:190px;display:grid;place-items:center;background:#f6d9d9;border:1px dashed #a85f72;color:#74334c}.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}.music{position:fixed;z-index:6;right:14px;top:14px;padding:6px 13px;font-size:16px}.reveal{animation:arrive .45s ease both}@keyframes arrive{from{opacity:0;transform:translateY(10px)}}[hidden]{display:none!important}@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.spark{display:none}}
+@font-face{font-family:Unifraktur;src:url(fonts/UnifrakturMaguntia.ttf) format("truetype");font-display:swap}
+.envelope{overflow:visible;transition:transform .35s}
+.envelope:not(.opened):hover{transform:translateY(-5px)}
+.envelope.opened{animation:envelope-lift 1.25s ease both}
+.flap{z-index:3;transition:transform .6s cubic-bezier(.22,.75,.24,1)}
+.seal{z-index:4;transition:opacity .18s}
+.envelope:before{z-index:2}
+.insert{position:absolute;z-index:1;inset:9px 8% 12px;background:#fff0dc;border:1px solid #c99474;border-radius:4px;display:grid;place-items:center;color:#923954;font-size:34px;opacity:0}
+.opened .insert{animation:letter-rise .8s .35s cubic-bezier(.17,.76,.27,1) both}
+.opening-glow{position:fixed;inset:0;pointer-events:none;z-index:4;background:radial-gradient(circle at var(--cx) var(--cy),#ffe4b788,transparent 56%);animation:glow 1.2s ease-out both}
+.spark{color:var(--ink);animation-duration:var(--life);animation-delay:var(--delay)}
+.letter-paper{position:relative;background:radial-gradient(ellipse at top,#fff8ec,transparent 72%),#f7e5ca;border:1px solid #bd8d68;box-shadow:inset 0 0 38px #aa644433,0 20px 55px #14071066}
+.letter-paper:before{content:"";position:absolute;inset:9px;border:1px solid #a15c4e69;border-radius:2px;pointer-events:none}
+.letter-paper .signoff{font-size:clamp(34px,8vw,56px)}
+.ornament{color:#9b4c55;letter-spacing:.45em;margin:0 0 14px}
+.letter-paper.reveal{animation:unfold .7s cubic-bezier(.2,.65,.2,1) both}
+.letter-paper.reveal .letter p,.letter-paper.reveal .signoff{animation:arrive .62s ease both}
+.letter-paper.reveal .letter p:nth-child(1){animation-delay:.18s}
+.letter-paper.reveal .letter p:nth-child(2){animation-delay:.31s}
+.letter-paper.reveal .letter p:nth-child(3){animation-delay:.44s}
+.letter-paper.reveal .letter p:nth-child(4){animation-delay:.57s}
+.letter-paper.reveal .signoff{animation-delay:.73s}
+@keyframes envelope-lift{0%,100%{transform:scale(1)}22%{transform:translateY(8px) scale(.96)}62%{transform:translateY(-8px) scale(1.04)}}
+@keyframes letter-rise{0%{opacity:0}12%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translateY(-142px) rotate(-5deg)}}
+@keyframes glow{0%,100%{opacity:0}40%{opacity:1}}
+@keyframes unfold{from{opacity:0;transform:perspective(700px) rotateX(-13deg) translateY(26px) scale(.97)}}
+.gallery.photo-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:9px;background:#4d2933;border-block:3px solid #a56270;border-radius:4px}
+.gallery.photo-strip img{flex:0 0 min(78%,320px);width:min(78%,320px);height:clamp(190px,58vw,300px);object-fit:contain;background:#fff8ed;scroll-snap-align:start;scroll-margin-inline:9px}
+.strip-hint{margin-top:-12px;color:#77394c;font-size:16px}
+</style>
+<button id="music" class="music" hidden>Play music</button>
+<audio id="song" loop preload="metadata"></audio>
+<main>
+<section id="intro">
+<p class="eyebrow">13 November 2026 · For Nodesha Vanessa</p>
+<h1>One Month of Us</h1>
+<button id="open" class="envelope" aria-label="Open your envelope"><span class="insert" aria-hidden="true">♡</span><span class="flap"></span><span class="seal">♥</span></button>
+<p>Tap to open your envelope ♡</p>
+</section>
+<section id="story" hidden>
+<div id="page" class="paper" tabindex="-1"></div>
+<nav class="nav" aria-label="Anniversary pages"><button id="back">Back</button><button id="next">Next date →</button></nav>
+</section>
+</main>
+<script src="memories.js"></script>
+<script>
+const intro=document.querySelector('#intro');
+const story=document.querySelector('#story');
+const page=document.querySelector('#page');
+const openButton=document.querySelector('#open');
+const back=document.querySelector('#back');
+const next=document.querySelector('#next');
+const song=document.querySelector('#song');
+const music=document.querySelector('#music');
+let index=0;
+let mutedByChoice=false;
+function playMusic(){
+  if (anniversary.track && !mutedByChoice) song.play().catch(()=>{});
+}
+if(anniversary.track){
+  song.src=anniversary.track;
+  song.addEventListener('play',()=>music.textContent='Pause music');
+  song.addEventListener('pause',()=>music.textContent='Play music');
+  music.onclick=()=>{
+    mutedByChoice=!song.paused;
+    if(mutedByChoice) song.pause();
+    else playMusic();
+  };
+}
+function render(){
+  const memory=anniversary.dates[index];
+  page.classList.toggle('letter-paper',!memory);
+  if(memory){
+    page.innerHTML='<p class="eyebrow"></p><h1></h1><div class="gallery"></div><p class="caption"></p>';
+    page.querySelector('.eyebrow').textContent='Date '+(index+1)+' of '+anniversary.dates.length;
+    page.querySelector('h1').textContent=memory.title;
+    page.querySelector('.caption').textContent=memory.caption;
+    const gallery=page.querySelector('.gallery');
+    if(memory.photos.length){
+      gallery.classList.add('photo-strip');
+      gallery.tabIndex=0;
+      gallery.setAttribute('role','region');
+      gallery.setAttribute('aria-label',memory.title+' photos');
+    }
+    if(memory.photos.length>1){
+      const hint=document.createElement('p');
+      hint.className='strip-hint';
+      hint.textContent='Swipe or scroll to see all '+memory.photos.length+' photos →';
+      gallery.after(hint);
+    }
+    for(const photo of memory.photos){
+      const img=new Image();
+      img.src=photo.src;
+      img.alt=photo.alt;
+      gallery.append(img);
+    }
+    if(!memory.photos.length){
+      const slot=document.createElement('div');
+      slot.className='slot';
+      slot.textContent='Date photos go here ♡';
+      gallery.append(slot);
+    }
+  }else{
+    page.innerHTML=`<p class="ornament" aria-hidden="true">✦ ♡ ✦</p><p class="eyebrow">A little something from me</p><h1>Dear Nodesha,</h1>
+    <div class="letter">
+    <p>Last time, I made you a little something because I had a question. This time, I made you one because I’m really happy you said yes.</p>
+    <p>Thank you for making time for me, for all the laughs, and for the conversations that make me wish we had a little longer together. I love looking back at these photos because I remember how happy I was to be there with you.</p>
+    <p>I’m grateful I get to call you my girlfriend. I’m looking forward to more dates, more pictures, and more of those little moments that end up being my favourites.</p>
+    <p>With love,<br>Shaf ♡</p>
+    </div><p class="signoff">Happy 1 month ♡</p>`;
+  }
+  back.hidden=index===0;
+  next.textContent=!memory?'Back to the envelope':index===anniversary.dates.length-1?'Read my letter ♡':'Next date →';
+  page.classList.remove('reveal');
+  void page.offsetWidth;
+  page.classList.add('reveal');
+  page.focus({preventScroll:true});
+  window.scrollTo(0,0);
+}
+function burst(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const box=openButton.getBoundingClientRect();
+  const centerX=box.left+box.width/2;
+  const centerY=box.top+box.height/2;
+  const glow=document.createElement('div');
+  glow.className='opening-glow';
+  glow.style.setProperty('--cx',centerX+'px');
+  glow.style.setProperty('--cy',centerY+'px');
+  document.body.append(glow);
+  setTimeout(()=>glow.remove(),1250);
+  const colors=['#ffd0d6','#fff0bb','#ff90ad','#fff6e8'];
+  for(let i=0;i<48;i++){
+    const spark=document.createElement('span');
+    const angle=i/48*Math.PI*2;
+    const distance=80+Math.random()*200;
+    spark.className='spark';
+    spark.setAttribute('aria-hidden','true');
+    spark.textContent=['✦','♥','✧','❋'][i%4];
+    spark.style.left=centerX+'px';
+    spark.style.top=centerY+'px';
+    spark.style.fontSize=(12+Math.random()*20)+'px';
+    spark.style.setProperty('--ink',colors[i%4]);
+    spark.style.setProperty('--life',(650+Math.random()*400)+'ms');
+    spark.style.setProperty('--delay',(120+i%3*120)+'ms');
+    spark.style.setProperty('--x',Math.cos(angle)*distance+'px');
+    spark.style.setProperty('--y',Math.sin(angle)*distance+'px');
+    spark.style.setProperty('--r',(i*23)+'deg');
+    document.body.append(spark);
+    setTimeout(()=>spark.remove(),1500);
+  }
+}
+openButton.onclick=()=>{
+  if(openButton.classList.contains('opened'))return;
+  music.hidden=!anniversary.track;
+  playMusic();
+  openButton.classList.add('opened');
+  burst();
+  setTimeout(()=>{
+    intro.hidden=true;
+    story.hidden=false;
+    index=0;
+    render();
+  },matchMedia('(prefers-reduced-motion: reduce)').matches?0:1180);
+};
+back.onclick=()=>{index--;render()};
+next.onclick=()=>{
+  if(index<anniversary.dates.length){index++;render();return}
+  story.hidden=true;
+  intro.hidden=false;
+  openButton.classList.remove('opened');
+  openButton.focus();
+  window.scrollTo(0,0);
+};
+</script>
+</html>
